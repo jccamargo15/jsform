@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Form JS</title>
+
+	<script src= "https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	<style>
+		body {
+			background-color: #c4c4c4;
+		}
+	</style>
+</head>
+<body>
+	<form action="" id="form1">
+		<textarea class="bruto" name="bruto" id="" cols="30" rows="10"></textarea>
+	</form>
+
+	<hr>
+
+	<form id="form2">
+		<input type="hidden" name="action" value="add_spell"><br>
+		<input type="text" name="name" placeholder="Nome da magia"><br>
+
+		<select name="category_id">
+			<option value="1">Adivinhação</option>
+			<option value="2">Água</option>
+			<option value="3">Alteração</option>
+			<option value="4">Ar</option>
+			<option value="5">Arcana</option>
+			<option value="6">Batalha</option>
+			<option value="7">Canção</option>
+			<option value="8">Caos</option>
+			<option value="9">Celestial</option>
+			<option value="10">Destruição</option>
+			<option value="11">Encantamento</option>
+			<option value="12">Fogo</option>
+			<option value="13">Ilusão</option>
+			<option value="14">Invocação</option>
+			<option value="15">Maldição </option>
+			<option value="16">Natureza</option>
+			<option value="17">Necromancia</option>
+			<option value="18">Primitiva</option>
+			<option value="19">Proibida </option>
+			<option value="20">Proteção</option>
+			<option value="21">Runa</option>
+			<option value="22">Sombra</option>
+			<option value="23">Tecnomancia</option>
+			<option value="24">Teleporte</option>
+			<option value="25">Tempestade</option>
+			<option value="26">Tempo</option>
+			<option value="27">Terra</option>
+			<option value="28">Teurgia</option>
+			<option value="29">Transformação</option>
+			<option value="30">Vida</option>
+		</select>
+		<br>
+
+		<select name="type">
+			<option value="AT">Ataque [AT]</option>
+			<option value="UT">Utilitária [UT]</option>
+		</select>
+		<br>
+		<select name="level">
+				<option value="0">Nível 0</option>
+				<option value="1">Nível 1</option>
+				<option value="2">Nível 2</option>
+				<option value="3">Nível 3</option>
+				<option value="4">Nível 4</option>
+				<option value="5">Nível 5</option>
+				<option value="6">Nível 6</option>
+				<option value="7">Nível 7</option>
+				<option value="8">Nível 8</option>
+				<option value="9">Nível 9</option>
+				<option value="10">Nível 10</option>
+		</select>
+		<br>
+		<textarea name="description" rows="8"></textarea>
+		<button>Salvar</button>
+	</form>
+
+	<script>
+		 $(document).ready(function() {  
+            $(".bruto").focusout(function() {  
+              
+                var textoBruto = $(this).val();
+
+                // var str = "Hello world, welcome to the universe.";
+				var n = textoBruto.indexOf("UT. ");
+				var nomeMagia = textoBruto.substring(0, n-1);
+
+				// if (n > -1) alert('Termo encontrado');
+				// else alert('Termo não encontrado');
+				console.log('NOME: ' + nomeMagia);
+
+				//REMOVER QUEBRAS DE LINHA
+				// textoBruto  = textoBruto.replace("\n", "");
+				// textoBruto  = textoBruto.replace("\t", ""); 
+				// textoBruto  = textoBruto.replace("\r", ""); 
+				// textoBruto  = textoBruto.replace("> <", ""); 
+				// textoBruto  = textoBruto.replace("\"", ""); 
+				textoBrutoSemQuebra  = textoBruto.replace(/\n/g, ""); 
+				console.log(textoBrutoSemQuebra);
+
+
+
+
+            }).trigger("focusout"); 
+        });  
+
+
+	</script>
+</body>
+</html>
